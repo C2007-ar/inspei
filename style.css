@@ -496,4 +496,10 @@ a {
     .content-section h2 {
         font-size: 1.5rem;
     }
+    .card i {
+    font-size: 3rem; /* Ajustez la taille selon votre préférence */
+    color: var(--color-primary); /* Utiliser la couleur d'accentuation */
+    margin-bottom: var(--spacing-md);
+    /* Retirez le 'filter: invert(1)...' que nous avions mis pour les images/icônes */
+    }
 }
