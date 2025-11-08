@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parrainage Étudiant | INSPEI Réussite CP1</title>
+    <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="Logo INSPÉI Réussite L1">
+                    <span>Réussite CP1</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">&#9776;</button> 
+                <ul class="nav-links">
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="tutoriels.html">Méthodologie</a></li>
+                    <li><a href="guides.html">Guides Admin</a></li>
+                    <li><a href="parrainage.html" class="active">Parrainage</a></li>
+                    <li><a href="contact.html" class="btn btn-primary">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section class="section-padding content-page-header">
+            <div class="container text-center">
+                <h1 class="page-title">Programme de Parrainage INSPEI</h1>
+                <p class="subtitle">Ne restez pas seul ! Laissez un étudiant des années supérieures vous guider et vous conseiller pour une transition en douceur.</p>
+            </div>
+        </section>
+
+        <section class="section-padding content-section">
+            <div class="container">
+                <h2>🤝 Comment Devenir Filleul ou Parrain ?</h2>
+                <div class="cards-grid three-cols">
+                    <div class="card process-step">
+                        <h3>1. Inscription</h3>
+                        <p>Remplissez le formulaire ci-dessous en précisant votre filière et vos besoins (Filleul) ou vos compétences (Parrain).</p>
+                    </div>
+                    <div class="card process-step">
+                        <h3>2. Mise en Relation</h3>
+                        <p>Notre système vous connecte avec un étudiant de L2 ou L3 qui correspond à votre profil académique ou social.</p>
+                    </div>
+                    <div class="card process-step">
+                        <h3>3. Échange</h3>
+                        <p>Communiquez ! Demandez des conseils sur les professeurs, les matières difficiles ou l'intégration à Abomey.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separator">
+
+        <section class="section-padding content-section bg-surface">
+            <div class="container">
+                <h2 class="text-center">Formulaire de Demande</h2>
+                <form id="parrainage-form" class="main-form">
+                    <div class="form-group">
+                        <label for="statut">Quel est votre statut ?</label>
+                        <select id="statut" name="statut" required>
+                            <option value="">-- Choisir --</option>
+                            <option value="filleul">Je suis en CP1 (Filleul)</option>
+                            <option value="parrain">Je suis en CP2 (Parrain)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nom">Nom & Prénom</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="filiere">Filière / Département</label>
+                        <input type="text" id="filiere" name="filiere" placeholder="Ex: Génie Civil ou Informatique" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="besoin">Vos besoins ou motivations</label>
+                        <textarea id="besoin" name="besoin" rows="4" placeholder="Ex: J'ai du mal avec les maths du semestre 1, ou : Je veux aider les nouveaux à s'intégrer."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large w-full">Envoyer ma Demande</button>
+                    <p id="form-message" class="success-message" style="display: none;"></p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 INSPEI Réussite CP1 | Un projet par et pour les étudiants.</p>
+            <div class="footer-links">
+                <a href="contact.html">Contact</a> | 
+                <a href="../assets/documents/mentions_legales.pdf" target="_blank">Mentions Légales</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/forms.js"></script>
+</body>
+</html>

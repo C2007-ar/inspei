@@ -1,0 +1,499 @@
+/* ======================================= */
+/* 1. VARIABLES ET FONDAMENTAUX (RESET) */
+/* ======================================= */
+
+:root {
+    /* Couleurs Premium Profondeur (Inspiré des interfaces pro sombres) */
+    --color-primary: #007bff;     /* Bleu INSPÉI (Accentuation Vive) */
+    --color-background: #0D1117;  /* Bleu Nuit Très Foncé (Fond principal) */
+    --color-surface: #161B22;     /* Surface légèrement plus claire (Cartes/Header/Footer) */
+    --color-text-light: #C9D1D9;  /* Gris Clair (Texte Principal) */
+    --color-text-muted: #8B949E;  /* Gris Mât (Texte Secondaire/Footer) */
+    --color-border: #30363D;      /* Bordure subtile et foncée */
+    
+    /* Typographie et Espacement */
+    --font-main: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; 
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+    --spacing-xl: 120px; /* Grand espacement pour l'effet premium */
+}
+
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.5;
+    color: var(--color-text-light);
+    background-color: var(--color-background); 
+}
+
+.container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* ======================================= */
+/* 2. TYPOGRAPHIE ET BOUTONS */
+/* ======================================= */
+
+h1, h2, h3 {
+    font-weight: 600; 
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text-light);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: color 0.2s ease;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 4px; 
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-background); 
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    box-shadow: 0 6px 10px rgba(0, 123, 255, 0.4); 
+    transform: translateY(-2px);
+}
+
+.btn-link {
+    display: inline-block;
+    margin-top: var(--spacing-md);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+.btn-link:hover {
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+}
+
+/* ======================================= */
+/* 3. HEADER ET NAVIGATION */
+/* ======================================= */
+
+.main-header {
+    background-color: var(--color-surface);
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-text-light);
+}
+
+.logo img {
+    height: 40px; 
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--color-text-muted);
+    padding: var(--spacing-sm) 0;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-primary);
+}
+
+.nav-toggle {
+    display: none; 
+    font-size: 1.5rem;
+    color: var(--color-text-light);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ======================================= */
+/* 4. SECTIONS SPÉCIFIQUES À L'ACCUEIL */
+/* ======================================= */
+
+.section-padding {
+    padding: var(--spacing-xl) 0;
+}
+
+/* Hero Section */
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 180px 0; 
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-primary);
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text-light);
+}
+
+/* Section Accès Rapide */
+.quick-access-section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
+
+/* Style des Cartes (Cards) */
+.card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: var(--spacing-lg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.6);
+}
+
+.card img {
+    height: 55px;
+    /* Rendre les icônes claires sur le fond sombre */
+    filter: invert(1) grayscale(100%) brightness(1.5); 
+    margin-bottom: var(--spacing-md);
+}
+
+.card h3 {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-sm);
+}
+
+.card p {
+    color: var(--color-text-muted);
+}
+
+/* ======================================= */
+/* 5. FOOTER */
+/* ======================================= */
+
+.main-footer {
+    background-color: var(--color-surface);
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+}
+
+.main-footer p, .main-footer a {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+/* ======================================= */
+/* 6. RESPONSIVE DESIGN */
+/* ======================================= */
+
+@media (max-width: 900px) {
+    .cards-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .hero-section {
+        padding: 150px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .section-padding {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    /* Navigation mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Ajuster la hauteur du header */
+        left: 0;
+        background-color: var(--color-surface);
+        border-top: 1px solid var(--color-border);
+        padding-bottom: var(--spacing-md);
+    }
+    .nav-links.open {
+        display: flex;
+    }
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--color-border);
+    }
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+    .nav-toggle {
+        display: block;
+    }
+}
+/* ======================================= */
+/* 7. STYLES DES PAGES INTÉRIEURES */
+/* ======================================= */
+
+.content-page-header {
+    background-color: var(--color-surface); /* Header de page distinct */
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary); /* Titre de page en couleur vive */
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.content-section h2 {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: var(--spacing-lg);
+    font-size: 2rem;
+    border-left: 4px solid var(--color-primary);
+    padding-left: var(--spacing-md);
+}
+
+.separator {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: var(--spacing-xl) 0;
+}
+
+/* Styles pour les grilles de contenu 2 colonnes (sur contact.html) */
+.content-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: flex-start;
+}
+
+.contact-details h3 {
+    font-size: 1.2rem;
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-light);
+}
+.contact-details p {
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-md);
+}
+
+.w-full {
+    width: 100%;
+}
+
+/* Call to Action (CTA) */
+.cta-section {
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+}
+.cta-section h2 {
+    border-left: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--spacing-md);
+}
+.cta-section p {
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+}
+/* ======================================= */
+/* 8. STYLES DES FORMULAIRES */
+/* ======================================= */
+
+.main-form {
+    background-color: var(--color-background); /* Léger contraste avec la section bg-surface */
+    padding: var(--spacing-lg);
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+    color: var(--color-text-light);
+}
+
+.main-form input[type="text"],
+.main-form input[type="email"],
+.main-form select,
+.main-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background-color: var(--color-surface);
+    color: var(--color-text-light);
+    font-family: var(--font-main);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.main-form input:focus,
+.main-form select:focus,
+.main-form textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+}
+
+.success-message {
+    color: #28a745; /* Vert pour le succès */
+    text-align: center;
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    border: 1px solid #28a745;
+    background-color: rgba(40, 167, 69, 0.1);
+    border-radius: 4px;
+}
+/* ======================================= */
+/* 9. STYLES FAQ (Accordéon) */
+/* ======================================= */
+
+.faq-item {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    margin-bottom: var(--spacing-sm);
+    overflow: hidden;
+}
+
+.faq-item summary {
+    display: block;
+    padding: var(--spacing-md);
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    list-style: none; /* Cache le marqueur par défaut */
+}
+
+.faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: var(--spacing-md);
+    transition: transform 0.2s;
+    font-size: 1.2rem;
+    color: var(--color-primary);
+}
+
+.faq-item[open] summary::after {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+.faq-item p {
+    padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--spacing-md);
+    color: var(--color-text-muted);
+}
+/* Dans la section @media (max-width: 600px) */
+
+@media (max-width: 600px) {
+    /* ... autres styles mobiles existants ... */
+    
+    .content-grid-2 {
+        grid-template-columns: 1fr; /* Passage à une seule colonne */
+    }
+    .content-section h2 {
+        font-size: 1.5rem;
+    }
+}
